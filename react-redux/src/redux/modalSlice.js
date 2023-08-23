@@ -6,12 +6,13 @@ const initialState = {
 
 export const modalSlice = createSlice({
   name: "modal",
+  initialState,
   reducers: {
-    // incrementByAmount: (state, action) => {
-    //   state.value += action.payload;
-    // },
+    modalFunc: (state) => {
+      state.modal = !state.modal;
+    },
   },
 });
 
-export const {} = modalSlice.actions;
+export const { modalFunc } = modalSlice.actions;
 export default modalSlice.reducer;
