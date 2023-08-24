@@ -10,7 +10,11 @@ const Modal = ({ title, content, btnText, btnFunc }) => {
       <div className="w-1/3 bg-white shadow-lg rounded-md p-4">
         <div className="border-b py-3 flex items-center justify-between">
           <div className="text-xl">{title}</div>
-          <GrClose onClick={() => dispatch(modalFunc())} size={24} />
+          <GrClose
+            cursor={"pointer"}
+            onClick={() => dispatch(modalFunc())}
+            size={24}
+          />
         </div>
         {content}
       </div>

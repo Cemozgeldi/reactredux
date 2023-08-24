@@ -1,7 +1,9 @@
 import React from "react";
 import { MdAddBox } from "react-icons/md";
 import { modalFunc } from "../redux/modalSlice";
+import { searchDataFunc } from "../redux/dataSlice";
 import { useDispatch } from "react-redux";
+import { sortingDataFunc } from "../redux/dataSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -10,13 +12,19 @@ const Header = () => {
       <div className="text-2xl">Redux Uygulama</div>
       <div className="flex items-center gap-3">
         <div>
-          <select className="h-6 rounded-lg" name="" id="">
+          <select
+            onChange={(e) => dispatch(sortingDataFunc(e.target.value))}
+            className="h-6 rounded-lg"
+            name=""
+            id=""
+          >
             <option value="asc">Artan</option>
             <option value="desc">Azalan</option>
           </select>
         </div>
         <div>
           <input
+            onChange={(e) => dispatch(searchDataFunc(e.target.value))}
             className="h-10 rounded-lg px-2"
             type="text"
             placeholder="Search"
